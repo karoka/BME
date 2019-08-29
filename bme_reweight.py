@@ -433,7 +433,8 @@ class Reweight:
         self.sim_data = np.array(self.sim_data)
         #print("# exp data: %s" % (str(self.exp_data.shape)))
         #print("# calc data: %s" % (str(self.sim_data.shape)))
-        print("# theta: %s" % str(self.theta))
+        if self.verbose:
+            print("# theta: %s" % str(self.theta))
         # first, calculate initial chi squared and RMSD
 
         chi_sq0 = chi_square(self.exp_data,self.sim_data,self.w0,self.bounds)/len(self.exp_data)
